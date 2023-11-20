@@ -8,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   public open: boolean = true;
-  public userConnected: boolean = false;
+  // public userConnected: boolean = false;
   public description: string = "Non connecté";
 
   ngOnInit(): void {
     this.open = false;
+    // localStorage.setItem('key1', 'Bonjour !');
+    // localStorage.getItem('key1');
+    // localStorage.clear();
+    // localStorage.removeItem('key1');
   }
 
   public switch(): void {
@@ -24,10 +28,14 @@ export class AppComponent implements OnInit {
   // }
 
   public login(): void {
-    this.userConnected = !this.userConnected;
-    if (this.userConnected == true)
+    // this.userConnected = !this.userConnected;
+    if (localStorage.getItem('userConnected') != null) {
       this.description = "Bienvenue";
-    else
+      localStorage.removeItem('userConnected');
+    } else {
       this.description = "Non connecté";
+      localStorage.setItem('userConnected', 'T');
+    }
+
   }
 }

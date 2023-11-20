@@ -7,7 +7,7 @@ import { ControlsGuard } from './core/controls.guard';
 const routes: Routes = [
   { path: 'home', component: PageHomeComponent },
   { path: 'orders', canActivate: [ControlsGuard], loadChildren: () => import('./features/order/order.module').then(m => m.OrderModule) },
-  { path: 'clients', loadChildren: () => import('./features/client/client.module').then(m => m.ClientModule) },
+  { path: 'clients', canActivate: [ControlsGuard], loadChildren: () => import('./features/client/client.module').then(m => m.ClientModule) },
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: "**", component: PageNotFoundComponent }
 ];

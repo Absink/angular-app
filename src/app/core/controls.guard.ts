@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ControlsGuard implements CanActivate {
+  constructor(private router: Router) { }
+
   canActivate(): boolean {
-    return true;
+    if (localStorage.getItem('userConnected'))
+      return true;
+    this.router.navigateByUrl('home');
+    return false;
   }
   
 }
