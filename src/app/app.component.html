@@ -1,7 +1,7 @@
 <header class="fixed-top">
-  <app-icon-nav></app-icon-nav>
+  <app-icon-nav (click)="switch()"></app-icon-nav>
   <app-header></app-header>
-  <app-icon-login></app-icon-login>
+  <app-icon-login (click)="login()"></app-icon-login>
 </header>
 
 <main [ngClass]="{'close-aside': !open}">
@@ -11,7 +11,6 @@
 
   <aside>
     <div class="scroller">
-      <!-- <ng-content select="app-navbar"></ng-content> -->
       <app-navbar></app-navbar>
     </div>
   </aside>
@@ -20,11 +19,8 @@
 
     <div class="contents">
       <h1>APP DEMO</h1>
-      <button type="button" class="btn btn-primary">Primary</button>
-      <button type="button" class="btn btn-secondary">Secondary</button>
-      <button type="button" class="btn btn-success">Success</button>
-      <!-- <button type="button" class="btn btn-info" (click)="switch()">Switch</button> -->
-      <!-- <ng-content select=".content"></ng-content> -->
+      <h2>{{ description }}</h2>
+      <!-- <button type="button" class="btn btn-info" (click)="updateTitre()">UpdateTitre</button> -->
     </div>
 
     <footer>

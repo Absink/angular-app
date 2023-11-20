@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  public title: string = "CRM";
+
+  // constructor() {
+  //   this.title = "CRM 3";
+  // }
+
+
+  // ngOnInit(): void {
+  //   this.title = "CRM 2";
+  // }
 
 }

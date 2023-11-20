@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   public open: boolean = true;
-  title = 'app-demo';
+  public userConnected: boolean = false;
+  public description: string = "Non connecté";
 
   ngOnInit(): void {
     this.open = false;
@@ -16,5 +17,17 @@ export class AppComponent implements OnInit {
 
   public switch(): void {
     this.open = !this.open;
+  }
+
+  // public updateTitre(): void {
+  //   this.description = "TEST !";
+  // }
+
+  public login(): void {
+    this.userConnected = !this.userConnected;
+    if (this.userConnected == true)
+      this.description = "Bienvenue";
+    else
+      this.description = "Non connecté";
   }
 }
