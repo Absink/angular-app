@@ -1,4 +1,6 @@
 <header class="fixed-top">
+  <app-icon-nav></app-icon-nav>
+  <app-header></app-header>
 </header>
 
 <main [ngClass]="{'close-aside': !open}">
@@ -9,6 +11,7 @@
   <aside>
     <div class="scroller">
       <!-- <ng-content select="app-navbar"></ng-content> -->
+      <app-navbar></app-navbar>
     </div>
   </aside>
 
@@ -16,7 +19,10 @@
 
     <div class="contents">
       <h1>APP DEMO</h1>
-      <button type="button" class="btn btn-info" (click)="switch()">Switch</button>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <!-- <button type="button" class="btn btn-info" (click)="switch()">Switch</button> -->
       <!-- <ng-content select=".content"></ng-content> -->
     </div>
 
