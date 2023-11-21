@@ -10,6 +10,8 @@ import { OrderService } from 'src/app/shared/services/order.service';
 export class PageListOrdersComponent implements OnInit {
 
   public orders: Order[] = [];
+  public enTetes: string [] = [
+    'ID', 'Client', 'Jours', 'Date', 'HT', 'TTC']
 
   constructor(private orderService: OrderService) { }
 

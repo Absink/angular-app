@@ -1,21 +1,5 @@
-<p>LIST ORDERS !!</p>
-<ul *ngFor="let o of orders">
-  <li>{{ o.id }}: {{ o.state }}</li>
-</ul>
+<app-table-light
+  [headers]="enTetes"
+  [orders]="orders">
 
-
-<p>LIST ORDERS (TJ > 1000)</p>
-<ul *ngFor="let o of orders">
-  <li *ngIf="o.tjmHT > 1000">{{ o.id }}: {{ o.state }}</li>
-</ul>
-
-
-<p>LIST ORDERS (TJ > 1000) SWITCH</p>
-<ul *ngFor="let o of orders">
-  <div [ngSwitch]="o.tjmHT">
-    <div *ngSwitchCase="500">{{ o.id }} = 500</div>
-    <div *ngSwitchCase="700">{{ o.id }} = 700</div>
-    <div *ngSwitchCase="900">{{ o.id }} = 900</div>
-    <div *ngSwitchDefault>{{ o.id }} = others</div>
-  </div>
-</ul>
+</app-table-light>

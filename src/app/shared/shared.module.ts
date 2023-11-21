@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IconNavComponent } from './components/icon-nav/icon-nav.component';
 import { IconLoginComponent } from './components/icon-login/icon-login.component';
 import { IconFooterComponent } from './components/icon-footer/icon-footer.component';
+import { TableLightComponent } from './components/table-light/table-light.component';
 
 
 
@@ -10,7 +11,8 @@ import { IconFooterComponent } from './components/icon-footer/icon-footer.compon
   declarations: [
     IconNavComponent,
     IconLoginComponent,
-    IconFooterComponent
+    IconFooterComponent,
+    TableLightComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { IconFooterComponent } from './components/icon-footer/icon-footer.compon
   exports: [
     IconNavComponent,
     IconLoginComponent,
-    IconFooterComponent
+    IconFooterComponent,
+    TableLightComponent
   ]
 })
 export class SharedModule { }

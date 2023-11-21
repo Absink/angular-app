@@ -1,0 +1,17 @@
+<table class="table table-success">
+  <thead>
+    <tr>
+      <th *ngFor="let h of headers">{{ h }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let o of orders">
+      <td>{{ o.id }}</td>
+      <td>{{ o.client }}</td>
+      <td>{{ o.nbJours }}</td>
+      <td>{{ o.date }}</td>
+      <td>{{ o.totalHT() }}</td>
+      <td>{{ o.totalTTC() }}</td>
+    </tr>
+  </tbody>
+</table>
