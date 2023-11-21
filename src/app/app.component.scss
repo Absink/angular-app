@@ -59,7 +59,16 @@ aside {
 
 footer {
   background: $light-color;
+  text-align: center;
 }
+
+app-footer {
+  color: #05cad1;
+  font-weight: bold;
+}
+
+
+
 
 @media (min-width: $md-breakpoint) {
   .shadow {

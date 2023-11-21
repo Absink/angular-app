@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   public description: string = "Non connecté";
 
   ngOnInit(): void {
-    this.open = false;
+    this.open = true;
     // localStorage.setItem('key1', 'Bonjour !');
     // localStorage.getItem('key1');
     // localStorage.clear();
