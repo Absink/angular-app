@@ -1,4 +1,11 @@
-<!-- <p>Client: {{ idClient }} </p> -->
-<p>{{ description }}</p>
+<div *ngIf="client">
+  <div>ID: {{ client.id }}</div>
+  <div>Nom: {{ client.name }}</div>
+  <div>Etat: {{ client.state }}</div>
+</div>
+
+<div *ngIf="!client">
+  <p>{{ notFound }}</p>
+</div>
+
 <button type="button" class="btn btn-primary" (click)="redirect()">Go liste</button>
-<button type="button" class="btn btn-primary" (click)="next()">Next</button>

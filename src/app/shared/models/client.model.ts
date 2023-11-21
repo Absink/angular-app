@@ -10,4 +10,9 @@ export class Client implements ClientI {
   comment: string = "";
   ca!: number;
 
+  constructor(obj?: Partial<Client>) {
+    if (obj)
+      Object.assign(this, obj);
+  }
+
 }
