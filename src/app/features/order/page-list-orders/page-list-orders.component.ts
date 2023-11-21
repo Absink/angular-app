@@ -11,7 +11,7 @@ export class PageListOrdersComponent implements OnInit {
 
   public orders: Order[] = [];
   public enTetes: string [] = [
-    'ID', 'Client', 'Jours', 'Date', 'HT', 'TTC']
+    'ID', 'Client', 'Jours', 'Date', 'HT', 'TTC', 'Etat'];
 
   constructor(private orderService: OrderService) { }
 

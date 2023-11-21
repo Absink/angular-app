@@ -6,6 +6,7 @@ import { IconFooterComponent } from './components/icon-footer/icon-footer.compon
 import { TableLightComponent } from './components/table-light/table-light.component';
 import { TotalPipe } from './pipes/total.pipe';
 import { DaysPipe } from './pipes/days.pipe';
+import { ColorStateDirective } from './directives/color-state.directive';
 
 
 
@@ -16,7 +17,8 @@ import { DaysPipe } from './pipes/days.pipe';
     IconFooterComponent,
     TableLightComponent,
     TotalPipe,
-    DaysPipe
+    DaysPipe,
+    ColorStateDirective
   ],
   imports: [
     CommonModule
