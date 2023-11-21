@@ -19,4 +19,9 @@ export class Order implements OrderI {
   totalTTC(): number {
     return this.totalHT() * (1 + this.tva/100);
   }
+
+  constructor(obj?: Partial<Order>) {
+    if (obj)
+      Object.assign(this, obj);
+  }
 }

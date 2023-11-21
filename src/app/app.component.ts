@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,27 +9,29 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   public open: boolean = true;
-  // public userConnected: boolean = false;
   public description: string = "Non connecté";
 
   ngOnInit(): void {
     this.open = true;
-    // localStorage.setItem('key1', 'Bonjour !');
-    // localStorage.getItem('key1');
-    // localStorage.clear();
-    // localStorage.removeItem('key1');
+
+    // const subject = new Subject<number>();
+
+    // subject.subscribe(number => console.log(1, number));
+    // subject.subscribe(number => console.log(2, number));
+
+    // subject.next(1);
+    // subject.next(50);
+    // subject.complete();
+
+
   }
 
   public switch(): void {
     this.open = !this.open;
   }
 
-  // public updateTitre(): void {
-  //   this.description = "TEST !";
-  // }
 
   public login(): void {
-    // this.userConnected = !this.userConnected;
     if (localStorage.getItem('userConnected') != null) {
       this.description = "Bienvenue";
       localStorage.removeItem('userConnected');
