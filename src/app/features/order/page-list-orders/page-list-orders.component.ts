@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/shared/models/order.model';
+import { OrderService } from 'src/app/shared/services/order.service';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -8,10 +9,16 @@ import { Order } from 'src/app/shared/models/order.model';
 })
 export class PageListOrdersComponent implements OnInit {
 
-  public order: Order = new Order();
+  public orders: Order[] = [];
+
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
-    this.order.id = 1; this.order.nbJours = 5; this.order.comment = "blakdlfld";
+    this.orderService.collection.subscribe(datas => {
+      this.orders = datas;
+      console.log( this.orders);
+    })
+    
   }
 
 }
