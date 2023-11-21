@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BtnI } from 'src/app/shared/interfaces/btn-i';
 import { Order } from 'src/app/shared/models/order.model';
 import { OrderService } from 'src/app/shared/services/order.service';
 
@@ -12,6 +13,11 @@ export class PageListOrdersComponent implements OnInit {
   public orders: Order[] = [];
   public enTetes: string [] = [
     'ID', 'Client', 'Jours', 'Date', 'HT', 'TTC', 'Etat'];
+  
+  public bntRoute: BtnI = { label: 'Add', route: 'add'};
+  public bntHref: BtnI = { label: 'Go to Ecosia', href: 'https://www.ecosia.org'};
+  public bntAction: BtnI = { label: 'Action', action: true};
+
 
   constructor(private orderService: OrderService) { }
 
@@ -21,6 +27,11 @@ export class PageListOrdersComponent implements OnInit {
       console.log( this.orders);
     })
     
+  }
+
+
+  public testAction(): void {
+    console.log("TEST !");
   }
 
 }

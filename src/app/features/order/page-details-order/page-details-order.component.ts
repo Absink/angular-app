@@ -19,7 +19,7 @@ export class PageDetailsOrderComponent implements OnInit {
     const id: string | null = this.route.snapshot.paramMap.get('id');
     console.log(id);
 
-    this.router.navigateByUrl('/home');
+    // this.router.navigateByUrl('/home');
   }
 
 

@@ -7,6 +7,9 @@ import { TableLightComponent } from './components/table-light/table-light.compon
 import { TotalPipe } from './pipes/total.pipe';
 import { DaysPipe } from './pipes/days.pipe';
 import { ColorStateDirective } from './directives/color-state.directive';
+import { ColorDaysDirective } from './directives/color-days.directive';
+import { BtnComponent } from './components/btn/btn.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,10 +21,13 @@ import { ColorStateDirective } from './directives/color-state.directive';
     TableLightComponent,
     TotalPipe,
     DaysPipe,
-    ColorStateDirective
+    ColorStateDirective,
+    ColorDaysDirective,
+    BtnComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     IconNavComponent,
@@ -29,7 +35,9 @@ import { ColorStateDirective } from './directives/color-state.directive';
     IconFooterComponent,
     TableLightComponent,
     TotalPipe,
-    DaysPipe
+    DaysPipe,
+    ColorStateDirective,
+    BtnComponent
   ]
 })
 export class SharedModule { }
