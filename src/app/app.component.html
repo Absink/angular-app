@@ -1,4 +1,7 @@
-<header class="fixed-top">
+<header class="fixed-top" [ngClass]="{
+  'connected': isConnected,
+  'not-connected': !isConnected
+}">
   <app-icon-nav (click)="switch()"></app-icon-nav>
   <app-header></app-header>
   <app-icon-login (click)="login()"></app-icon-login>

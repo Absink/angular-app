@@ -37,6 +37,7 @@ import { RouterModule } from '@angular/router';
     TotalPipe,
     DaysPipe,
     ColorStateDirective,
+    ColorDaysDirective,
     BtnComponent
   ]
 })

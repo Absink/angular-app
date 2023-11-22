@@ -1,7 +1,13 @@
-<app-table-light
-  [headers]="enTetes"
-  [orders]="orders">
-
+<app-table-light [headers]="enTetes">
+  <tr *ngFor="let o of orders">
+    <td>{{ o.id }}</td>
+    <td>{{ o.client }}</td>
+    <td [appColorDays]="o.nbJours">{{ o | days }}</td>
+    <td>{{ o.date | date: 'dd/MM/yyyy' }}</td>
+    <td>{{ o | total | currency: 'EUR'  }}</td>
+    <td>{{ o | total: 'TTC' | currency: 'EUR'  }}</td>
+    <td [appColorState]="o.state">{{ o.state }}</td>
+  </tr>
 </app-table-light>
 
 <app-btn [btn]="bntRoute"></app-btn>

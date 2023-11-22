@@ -14,9 +14,9 @@ export class PageListOrdersComponent implements OnInit {
   public enTetes: string [] = [
     'ID', 'Client', 'Jours', 'Date', 'HT', 'TTC', 'Etat'];
   
-  public bntRoute: BtnI = { label: 'Add', route: 'add'};
+  public bntRoute: BtnI = { label: 'Add', route: 'add', color: 'red'};
   public bntHref: BtnI = { label: 'Go to Ecosia', href: 'https://www.ecosia.org'};
-  public bntAction: BtnI = { label: 'Action', action: true};
+  public bntAction: BtnI = { label: 'Action', action: true, color: 'green'};
 
 
   constructor(private orderService: OrderService) { }

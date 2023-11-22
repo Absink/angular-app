@@ -10,6 +10,13 @@ header {
   align-items: center;
 }
 
+.connected {
+  background: red;
+}
+.not-connected {
+  background: purple;
+}
+
 
 main {
   background: darken($light-color, 5);

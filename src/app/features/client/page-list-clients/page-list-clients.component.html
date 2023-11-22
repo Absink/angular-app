@@ -1,5 +1,12 @@
 <app-btn [btn]="btnFiltre" (clicked)="updateState()"></app-btn>
 
-<app-table-light [headers]="headers" [clients]="getClients()"></app-table-light>
+<app-table-light [headers]="headers">
+  <tr *ngFor="let c of getClients()">
+      <td>{{ c.id }}</td>
+      <td>{{ c.name }}</td>
+      <td>{{ c.ca  }}</td>
+      <td>{{ c.state }}</td>
+  </tr>
+</app-table-light>
 
 <app-btn [btn]="bntAdd"></app-btn>

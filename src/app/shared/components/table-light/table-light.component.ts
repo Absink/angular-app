@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Order } from '../../models/order.model';
-import { Client } from '../../models/client.model';
 
 @Component({
   selector: 'app-table-light',
@@ -10,8 +8,5 @@ import { Client } from '../../models/client.model';
 export class TableLightComponent {
 
   @Input() headers: string[] = [];
-  @Input() orders: Order[] = [];
-
-  @Input() clients: Client[] = [];
 
 }

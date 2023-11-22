@@ -26,6 +26,10 @@ export class AppComponent implements OnInit {
 
   }
 
+  public get isConnected(): boolean {
+    return localStorage.getItem('userConnected') != null;
+  }
+
   public switch(): void {
     this.open = !this.open;
   }
