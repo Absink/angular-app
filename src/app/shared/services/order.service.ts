@@ -36,7 +36,13 @@ export class OrderService {
 
   // Requêtes
   public getById(id: number): Observable<Order> {
-    return this.http.get<Order>(`${this.url}/order/${id}`)
+    return this.http.get<Order>(`${this.url}/order/${id}`).pipe(
+      map(obj => new Order(obj)));
+  }
+
+  public add(order: Order): Observable<Order> {
+    return this.http.post<Order>(`${this.url}/orders`, order).pipe(
+      map(obj => new Order(obj)));
   }
 
 
