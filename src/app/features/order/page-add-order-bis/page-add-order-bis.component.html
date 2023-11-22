@@ -1,0 +1,40 @@
+<form [formGroup]="form">
+
+  <div class="form-group">
+    <label for="typePresta">Type</label>
+    <input formControlName="typePresta" type="text" class="form-control" id="typePresta">
+    <div *ngIf="form.get('typePresta')?.invalid && form.get('typePresta')?.touched" class="alert alert-danger">Champs requis</div>
+  </div>
+
+  <div class="form-group">
+    <label for="client">Client</label>
+    <input formControlName="client" type="text" class="form-control" id="client">
+    <!-- <div *ngIf="form.get('client')?.invalid && form.get('client')?.touched" class="alert alert-danger">Error</div> -->
+    <div *ngIf="form.get('client')?.touched && form.get('client')?.hasError('required')" class="alert alert-danger">Champs requis</div>
+    <div *ngIf="form.get('client')?.touched && form.get('client')?.hasError('minlength')" class="alert alert-danger">Minimum 5 characters</div>
+  </div>
+
+  <!-- <div class="form-group">
+    <label for="clientId">Client (ID)</label>
+    <select formControlName="clientId" class="form-control" id="clientId">
+      <option *ngFor="let c of clients" [ngValue]="c.id" [selected]="c.id === order.clientId">{{ c.name }}</option>
+    </select>
+  </div> -->
+
+  <div class="form-group">
+    <label for="nbJours">Nombre jours</label>
+    <input formControlName="nbJours" type="number" class="form-control" id="nbJours">
+  </div>
+
+  <div class="form-group">
+    <label for="tjmHT">TJM</label>
+    <input formControlName="tjmHT" type="number" class="form-control" id="tjmHT">
+  </div>
+
+  <div class="form-group">
+    <label for="tva">TVA</label>
+    <input formControlName="tva" type="number" class="form-control" id="tva">
+  </div>
+
+  <button [disabled]="form.invalid" type="submit" class="btn btn-primary" (click)="save()">Ajouter</button>
+</form>
