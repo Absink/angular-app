@@ -4,7 +4,7 @@
       <th *ngFor="let h of headers">{{ h }}</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="orders">
     <tr *ngFor="let o of orders">
       <td>{{ o.id }}</td>
       <td>{{ o.client }}</td>
@@ -13,6 +13,14 @@
       <td>{{ o | total | currency: 'EUR'  }}</td>
       <td>{{ o | total: 'TTC' | currency: 'EUR'  }}</td>
       <td [appColorState]="o.state">{{ o.state }}</td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="clients">
+    <tr *ngFor="let c of clients">
+      <td>{{ c.id }}</td>
+      <td>{{ c.name }}</td>
+      <td>{{ c.ca  }}</td>
+      <td>{{ c.state }}</td>
     </tr>
   </tbody>
 </table>
