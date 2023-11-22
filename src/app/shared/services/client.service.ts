@@ -43,4 +43,14 @@ export class ClientService {
       map(datas => datas.map(
         data => new Client(data))));
   }
+
+  public add(c: Client): Observable<Client> {
+    return this.http.post<Client>(`${this.url}/clients`, c).pipe(
+      map(obj => new Client(obj)));
+  }
+
+  public update(c: Client, id: number): Observable<Client> {
+    return this.http.put<Client>(`${this.url}/clients/${id}`, c).pipe(
+      map(obj => new Client(obj)));
+  }
 }
