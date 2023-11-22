@@ -1,5 +1,5 @@
 export interface BtnI {
-  label: string;
+  label?: string;
   route?: string;
   href?: string;
   action?: boolean;

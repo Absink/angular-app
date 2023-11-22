@@ -1,4 +1,6 @@
-<app-btn [btn]="btnFiltre" (clicked)="updateState()"></app-btn>
+<app-btn [btn]="btnFiltre" (clicked)="updateState()">
+  <img class="btn-action" src="assets/funnel.svg">
+</app-btn>
 
 <app-table-light [headers]="headers">
   <tr *ngFor="let c of getClients()">
@@ -9,4 +11,6 @@
   </tr>
 </app-table-light>
 
-<app-btn [btn]="bntAdd"></app-btn>
+<app-btn [btn]="bntAdd">
+  <img class="btn-route btn-action" src="assets/plus.svg">
+</app-btn>

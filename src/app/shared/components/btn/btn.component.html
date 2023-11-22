@@ -1,3 +1,19 @@
-<a *ngIf="btn.route" [ngStyle]="{ background: btn.color }" [routerLink]="btn.route">{{ btn.label }}</a>
-<a *ngIf="btn.href" [ngStyle]="{ background: btn.color }" [href]="btn.href">{{ btn.label }}</a>
-<button *ngIf="btn.action" [ngStyle]="{ background: btn.color }" (click)="doAction()">{{ btn.label }}</button>
+<a *ngIf="btn.route" [ngStyle]="{ background: btn.color }" [routerLink]="btn.route">
+  <ng-content select=".btn-route"></ng-content>
+  <!-- <h1></h1>
+  <ng-content select=".btn-route"></ng-content>
+  <ng-content select=".btn-route"></ng-content> -->
+  {{ btn.label }}
+</a>
+
+
+<a *ngIf="btn.href" [ngStyle]="{ background: btn.color }" [href]="btn.href">
+  <ng-content select=".btn-href"></ng-content>
+  {{ btn.label }}
+</a>
+
+
+<button *ngIf="btn.action" [ngStyle]="{ background: btn.color }" (click)="doAction()">
+  <ng-content select=".btn-action"></ng-content>
+  {{ btn.label }}
+</button>
