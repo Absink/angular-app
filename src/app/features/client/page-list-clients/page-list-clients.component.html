@@ -1,5 +1,5 @@
-<p>{{ title }}</p>
-<p>{{ clients | json }}</p>
+<app-btn [btn]="btnFiltre" (clicked)="updateState()"></app-btn>
 
+<app-table-light [headers]="headers" [clients]="getClients()"></app-table-light>
 
 <app-btn [btn]="bntAdd"></app-btn>
