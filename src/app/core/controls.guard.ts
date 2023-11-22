@@ -10,7 +10,7 @@ export class ControlsGuard implements CanActivate {
   canActivate(): boolean {
     if (localStorage.getItem('userConnected'))
       return true;
-    this.router.navigateByUrl('home');
+    this.router.navigateByUrl('login');
     return false;
   }
   

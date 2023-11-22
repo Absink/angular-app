@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr'
+import { FormsModule } from '@angular/forms';
 registerLocaleData(localeFr, 'fr-FR')
 
 @NgModule({

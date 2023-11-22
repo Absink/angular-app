@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
 
   public open: boolean = true;
   public description: string = "Non connecté";
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.open = true;
@@ -35,14 +37,9 @@ export class AppComponent implements OnInit {
   }
 
 
-  public login(): void {
-    if (localStorage.getItem('userConnected') != null) {
-      this.description = "Bienvenue";
-      localStorage.removeItem('userConnected');
-    } else {
-      this.description = "Non connecté";
-      localStorage.setItem('userConnected', 'T');
-    }
+  public logout(): void {
+    localStorage.removeItem('userConnected');
+    this.router.navigateByUrl('login');
 
   }
 }

@@ -4,7 +4,7 @@
 }">
   <app-icon-nav (click)="switch()"></app-icon-nav>
   <app-header></app-header>
-  <app-icon-login (click)="login()"></app-icon-login>
+  <app-icon-login *ngIf="isConnected" (click)="logout()"></app-icon-login>
 </header>
 
 <main [ngClass]="{'close-aside': !open}">
