@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 export class TableLightComponent {
 
   @Input() headers: string[] = [];
+  @Input() colorHeaders: string = 'basic';
 
 }
